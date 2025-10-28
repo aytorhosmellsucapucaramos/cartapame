@@ -16,6 +16,8 @@
   transition: all 1s ease;
   border: 3px solid transparent;
   background-clip: padding-box;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .letter-border {

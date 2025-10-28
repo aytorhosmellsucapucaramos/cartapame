@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .App {
@@ -61,6 +67,9 @@
   z-index: 10;
   position: relative;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 .open-button::before {
@@ -107,14 +116,73 @@
   box-shadow: 0 10px 25px rgba(245, 87, 108, 0.5) !important;
 }
 
+/* Touch device support */
+@media (hover: none) and (pointer: coarse) {
+  .open-button {
+    font-size: 1.3em;
+    padding: 18px 45px;
+  }
+  
+  .open-button:active {
+    transform: scale(0.95) !important;
+  }
+  
+  .open-button:hover {
+    transform: scale(1) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .App {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 15px;
+    gap: 25px;
+  }
+
   .envelope-wrapper {
-    min-height: 400px;
+    min-height: 350px;
   }
 
   .open-button {
-    font-size: 1.1em;
-    padding: 15px 35px;
+    font-size: 1.15em;
+    padding: 16px 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .envelope-wrapper {
+    min-height: 300px;
+  }
+
+  .open-button {
+    font-size: 1em;
+    padding: 14px 32px;
+    white-space: nowrap;
+  }
+  
+  .open-button::before {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  .open-button {
+    font-size: 0.95em;
+    padding: 12px 28px;
+  }
+  
+  .envelope-wrapper {
+    min-height: 280px;
   }
 }

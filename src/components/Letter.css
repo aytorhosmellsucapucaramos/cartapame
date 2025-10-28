@@ -74,7 +74,9 @@
     max-width: 92vw;
     max-height: 88vh;
     overflow-y: auto;
+    overflow-x: hidden;
     box-shadow: 0 25px 100px rgba(102, 126, 234, 0.4);
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -82,6 +84,8 @@
   padding: 45px;
   position: relative;
   z-index: 1;
+  width: 100%;
+  height: auto;
 }
 
 .letter-header {
@@ -462,6 +466,9 @@
     to {
       width: 95vw;
       max-height: 85vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
     }
   }
   
@@ -521,6 +528,16 @@
 }
 
 @media (max-width: 480px) {
+  @keyframes letterExpand {
+    to {
+      width: 96vw;
+      max-height: 82vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
   .letter-content {
     padding: 25px 20px;
   }
@@ -539,5 +556,25 @@
   
   .hearts-container {
     font-size: 1.8em;
+  }
+}
+
+/* Fix para scroll en móviles */
+@media (hover: none) and (pointer: coarse) {
+  .letter.open {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .letter-content {
+    touch-action: pan-y;
+  }
+}
+
+/* Prevenir zoom accidental en iOS */
+@supports (-webkit-touch-callout: none) {
+  .letter {
+    touch-action: pan-y;
   }
 }

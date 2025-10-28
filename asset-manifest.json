@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/carta-pamela/static/css/main.4a715754.css",
+    "main.js": "/carta-pamela/static/js/main.8bf84230.js",
+    "static/js/453.ba445e48.chunk.js": "/carta-pamela/static/js/453.ba445e48.chunk.js",
+    "index.html": "/carta-pamela/index.html",
+    "main.4a715754.css.map": "/carta-pamela/static/css/main.4a715754.css.map",
+    "main.8bf84230.js.map": "/carta-pamela/static/js/main.8bf84230.js.map",
+    "453.ba445e48.chunk.js.map": "/carta-pamela/static/js/453.ba445e48.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a715754.css",
+    "static/js/main.8bf84230.js"
+  ]
+}
